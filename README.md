@@ -1,14 +1,15 @@
 ![Ubuntu](https://img.shields.io/badge/ubuntu-20.04-orange?logo=ubuntu&logoColor=white)
-![GitLab](https://img.shields.io/badge/gitlab-repo-orange?logo=gitlab&logoColor=white)
+![GitLab](https://img.shields.io/badge/gitlab-repo-black?logo=gitlab&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-db-blue?logo=postgresql&logoColor=white)
 
-![Python](https://img.shields.io/badge/python-3.8+-blue?logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/python-v3.8+-blue?logo=python&logoColor=white)
 ![Bandit](https://img.shields.io/badge/security-bandit-yellow)
 
+## 1. Cài đặt công cụ, môi trường và các thư viện cần thiết
 
-<p><b>1. Cài đặt công cụ, môi trường và các thư viện cần thiết</b></p>
+### 1.1. Clone project.
 
-<p><b>1.1. Clone project.</b></p>
+
 <pre>
 git clone https://gitlab.com/anhlta/odoo-fitdnu.git
 git checkout &lt;branch-name&gt;
