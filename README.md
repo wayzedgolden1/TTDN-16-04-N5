@@ -1,9 +1,11 @@
-![Ubuntu](https://img.shields.io/badge/ubuntu-20.04-orange?logo=ubuntu&logoColor=white)
-![GitLab](https://img.shields.io/badge/gitlab-repo-black?logo=gitlab&logoColor=white)
-![Postgres](https://img.shields.io/badge/postgres-db-blue?logo=postgresql&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/UBUNTU-orange?logo=ubuntu&logoColor=white)
+![GitLab](https://img.shields.io/badge/GITLAB-black?logo=gitlab&logoColor=white)
+![Postgres](https://img.shields.io/badge/POSTGRES-blue?logo=postgresql&logoColor=white)
 
 ![Python](https://img.shields.io/badge/python-v3.8+-blue?logo=python&logoColor=white)
-![Bandit](https://img.shields.io/badge/security-bandit-yellow)
+![Security](https://img.shields.io/badge/security-grey)
+![Bandit](https://img.shields.io/badge/bandit-yellow)
+
 
 ## 1. Cài đặt công cụ, môi trường và các thư viện cần thiết
 
