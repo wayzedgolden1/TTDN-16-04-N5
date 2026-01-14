@@ -1,6 +1,10 @@
-<p><b>Ubuntu GitLab Postgres</b></p>
+![Ubuntu](https://img.shields.io/badge/ubuntu-20.04-orange?logo=ubuntu&logoColor=white)
+![GitLab](https://img.shields.io/badge/gitlab-repo-orange?logo=gitlab&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-db-blue?logo=postgresql&logoColor=white)
 
-<p>Python security: bandit</p>
+![Python](https://img.shields.io/badge/python-3.8+-blue?logo=python&logoColor=white)
+![Bandit](https://img.shields.io/badge/security-bandit-yellow)
+
 
 <p><b>1. Cài đặt công cụ, môi trường và các thư viện cần thiết</b></p>
 
