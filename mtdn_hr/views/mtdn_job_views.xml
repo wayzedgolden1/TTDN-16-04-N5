@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Job List View -->
+    <record id="view_mtdn_job_list" model="ir.ui.view">
+        <field name="name">mtdn.job.list</field>
+        <field name="model">mtdn.job</field>
+        <field name="arch" type="xml">
+            <list string="Chức danh">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Job Form View -->
+    <record id="view_mtdn_job_form" model="ir.ui.view">
+        <field name="name">mtdn.job.form</field>
+        <field name="model">mtdn.job</field>
+        <field name="arch" type="xml">
+            <form string="Chức danh">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="VD: Nhân viên kinh doanh"/>
+                        </h1>
+                        <div class="text-muted">
+                            <span>Mã: </span>
+                            <field name="code" placeholder="VD: SALE" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <group>
+                        <group string="Thông tin">
+                            <field name="active"/>
+                        </group>
+                        <group string="Mô tả">
+                            <field name="description" nolabel="1" placeholder="Mô tả ngắn..."/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Job Search View -->
+    <record id="view_mtdn_job_search" model="ir.ui.view">
+        <field name="name">mtdn.job.search</field>
+        <field name="model">mtdn.job</field>
+        <field name="arch" type="xml">
+            <search string="Tìm chức danh">
+                <field name="name"/>
+                <field name="code"/>
+                <filter name="filter_active" string="Đang hoạt động" domain="[('active','=',True)]"/>
+            </search>
+        </field>
+    </record>
+</odoo>

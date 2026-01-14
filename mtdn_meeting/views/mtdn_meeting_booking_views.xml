@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_mtdn_meeting_booking_list" model="ir.ui.view">
+        <field name="name">mtdn.meeting.booking.list</field>
+        <field name="model">mtdn.meeting.booking</field>
+        <field name="arch" type="xml">
+            <list string="Lịch đặt phòng">
+                <field name="name"/>
+                <field name="room_id"/>
+                <field name="start_datetime"/>
+                <field name="end_datetime"/>
+                <field name="host_id"/>
+                <field name="state" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_mtdn_meeting_booking_form" model="ir.ui.view">
+        <field name="name">mtdn.meeting.booking.form</field>
+        <field name="model">mtdn.meeting.booking</field>
+        <field name="arch" type="xml">
+            <form string="Lịch đặt phòng">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,cancelled"/>
+                    <button name="action_set_draft" type="object" string="Nháp" class="btn-secondary"/>
+                    <button name="action_confirm" type="object" string="Xác nhận" class="btn-primary"/>
+                    <button name="action_cancel" type="object" string="Hủy" class="btn-danger"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="VD: Họp kế hoạch tuần"/></h1>
+                    </div>
+
+                    <group>
+                        <group string="Thời gian &amp; Phòng">
+                            <field name="start_datetime"/>
+                            <field name="end_datetime"/>
+                            <field name="room_id"/>
+                        </group>
+                        <group string="Tổ chức">
+                            <field name="host_id"/>
+                            <field name="participant_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+
+                    <group string="Thiết bị">
+                        <field name="equipment_ids" widget="many2many_tags"/>
+                    </group>
+
+                    <group string="Ghi chú">
+                        <field name="note" nolabel="1" placeholder="Ghi chú thêm..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mtdn_meeting_booking_search" model="ir.ui.view">
+        <field name="name">mtdn.meeting.booking.search</field>
+        <field name="model">mtdn.meeting.booking</field>
+        <field name="arch" type="xml">
+            <search string="Tìm lịch đặt phòng">
+                <field name="name"/>
+                <field name="room_id"/>
+                <field name="host_id"/>
+                <field name="participant_ids"/>
+
+                <filter name="filter_draft" string="Nháp" domain="[('state','=','draft')]"/>
+                <filter name="filter_confirmed" string="Xác nhận" domain="[('state','=','confirmed')]"/>
+                <filter name="filter_cancelled" string="Hủy" domain="[('state','=','cancelled')]"/>
+
+                <filter name="group_by_room" string="Nhóm theo phòng" context="{'group_by':'room_id'}"/>
+                <filter name="group_by_state" string="Nhóm theo trạng thái" context="{'group_by':'state'}"/>
+                <filter name="group_by_host" string="Nhóm theo host" context="{'group_by':'host_id'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

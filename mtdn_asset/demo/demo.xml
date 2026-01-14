@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <!-- Asset Categories -->
+    <record id="mtdn_asset_cat_it" model="mtdn.asset.category">
+        <field name="code">IT_EQUIP</field>
+        <field name="name">Thiết bị IT</field>
+    </record>
+    <record id="mtdn_asset_cat_office" model="mtdn.asset.category">
+        <field name="code">OFFICE</field>
+        <field name="name">Văn phòng</field>
+    </record>
+    <record id="mtdn_asset_cat_meeting" model="mtdn.asset.category">
+        <field name="code">MEET_EQUIP</field>
+        <field name="name">Thiết bị phòng họp</field>
+    </record>
+
+    <!-- Assets -->
+    <record id="mtdn_asset_01" model="mtdn.asset">
+        <field name="code">AST00001</field>
+        <field name="name">Laptop Dell Latitude</field>
+        <field name="category_id" ref="mtdn_asset_cat_it"/>
+        <field name="state">in_use</field>
+        <field name="employee_id" ref="mtdn_hr.mtdn_employee_03"/>
+        <field name="purchase_date">2025-06-10</field>
+        <field name="in_service_date">2025-06-15</field>
+        <field name="value">1500</field>
+    </record>
+
+    <record id="mtdn_asset_02" model="mtdn.asset">
+        <field name="code">AST00002</field>
+        <field name="name">PC Văn phòng</field>
+        <field name="category_id" ref="mtdn_asset_cat_it"/>
+        <field name="state">in_use</field>
+        <field name="department_id" ref="mtdn_hr.mtdn_department_hr"/>
+        <field name="purchase_date">2024-02-01</field>
+        <field name="in_service_date">2024-02-10</field>
+        <field name="value">900</field>
+    </record>
+
+    <record id="mtdn_asset_03" model="mtdn.asset">
+        <field name="code">AST00003</field>
+        <field name="name">Máy chiếu Epson</field>
+        <field name="category_id" ref="mtdn_asset_cat_meeting"/>
+        <field name="state">available</field>
+        <field name="purchase_date">2023-08-15</field>
+        <field name="in_service_date">2023-08-20</field>
+        <field name="value">650</field>
+    </record>
+
+    <record id="mtdn_asset_04" model="mtdn.asset">
+        <field name="code">AST00004</field>
+        <field name="name">TV Samsung 55 inch</field>
+        <field name="category_id" ref="mtdn_asset_cat_meeting"/>
+        <field name="state">available</field>
+        <field name="purchase_date">2023-09-10</field>
+        <field name="in_service_date">2023-09-15</field>
+        <field name="value">800</field>
+    </record>
+
+    <record id="mtdn_asset_05" model="mtdn.asset">
+        <field name="code">AST00005</field>
+        <field name="name">Micro không dây</field>
+        <field name="category_id" ref="mtdn_asset_cat_meeting"/>
+        <field name="state">available</field>
+        <field name="purchase_date">2023-10-01</field>
+        <field name="in_service_date">2023-10-05</field>
+        <field name="value">120</field>
+    </record>
+
+    <record id="mtdn_asset_06" model="mtdn.asset">
+        <field name="code">AST00006</field>
+        <field name="name">Bảng trắng</field>
+        <field name="category_id" ref="mtdn_asset_cat_office"/>
+        <field name="state">in_use</field>
+        <field name="department_id" ref="mtdn_hr.mtdn_department_it"/>
+        <field name="purchase_date">2022-03-01</field>
+        <field name="in_service_date">2022-03-02</field>
+        <field name="value">70</field>
+    </record>
+
+    <record id="mtdn_asset_07" model="mtdn.asset">
+        <field name="code">AST00007</field>
+        <field name="name">Router WiFi</field>
+        <field name="category_id" ref="mtdn_asset_cat_it"/>
+        <field name="state">maintenance</field>
+        <field name="department_id" ref="mtdn_hr.mtdn_department_it"/>
+        <field name="purchase_date">2021-12-12</field>
+        <field name="in_service_date">2021-12-20</field>
+        <field name="value">110</field>
+    </record>
+
+    <record id="mtdn_asset_08" model="mtdn.asset">
+        <field name="code">AST00008</field>
+        <field name="name">Bộ ghế phòng họp</field>
+        <field name="category_id" ref="mtdn_asset_cat_office"/>
+        <field name="state">available</field>
+        <field name="purchase_date">2024-05-05</field>
+        <field name="in_service_date">2024-05-10</field>
+        <field name="value">500</field>
+    </record>
+
+    <record id="mtdn_asset_09" model="mtdn.asset">
+        <field name="code">AST00009</field>
+        <field name="name">Loa hội nghị</field>
+        <field name="category_id" ref="mtdn_asset_cat_meeting"/>
+        <field name="state">available</field>
+        <field name="purchase_date">2024-06-01</field>
+        <field name="in_service_date">2024-06-03</field>
+        <field name="value">180</field>
+    </record>
+
+    <record id="mtdn_asset_10" model="mtdn.asset">
+        <field name="code">AST00010</field>
+        <field name="name">Camera họp trực tuyến</field>
+        <field name="category_id" ref="mtdn_asset_cat_meeting"/>
+        <field name="state">broken</field>
+        <field name="purchase_date">2022-11-11</field>
+        <field name="in_service_date">2022-11-20</field>
+        <field name="value">220</field>
+    </record>
+</odoo>

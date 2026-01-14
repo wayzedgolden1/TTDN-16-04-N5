@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <!-- Meeting Rooms -->
+    <record id="mtdn_room_a" model="mtdn.meeting.room">
+        <field name="code">ROOM_A</field>
+        <field name="name">Phòng Họp A</field>
+        <field name="location">Tầng 3 - Khu A</field>
+        <field name="capacity">8</field>
+        <field name="state">available</field>
+        <field name="equipment_ids" eval="[(6, 0, [ref('mtdn_asset.mtdn_asset_03'), ref('mtdn_asset.mtdn_asset_04'), ref('mtdn_asset.mtdn_asset_05'), ref('mtdn_asset.mtdn_asset_09')])]"/>
+    </record>
+
+    <record id="mtdn_room_b" model="mtdn.meeting.room">
+        <field name="code">ROOM_B</field>
+        <field name="name">Phòng Họp B</field>
+        <field name="location">Tầng 2 - Khu B</field>
+        <field name="capacity">6</field>
+        <field name="state">available</field>
+        <field name="equipment_ids" eval="[(6, 0, [ref('mtdn_asset.mtdn_asset_04'), ref('mtdn_asset.mtdn_asset_06')])]"/>
+    </record>
+
+    <record id="mtdn_room_c" model="mtdn.meeting.room">
+        <field name="code">ROOM_C</field>
+        <field name="name">Phòng Họp C</field>
+        <field name="location">Tầng 5 - Khu A</field>
+        <field name="capacity">12</field>
+        <field name="state">maintenance</field>
+    </record>
+
+    <!-- Sample Bookings (no overlap for the same room) -->
+    <record id="mtdn_booking_01" model="mtdn.meeting.booking">
+        <field name="name">Họp kế hoạch tuần</field>
+        <field name="room_id" ref="mtdn_room_a"/>
+        <field name="start_datetime">2026-01-14 09:00:00</field>
+        <field name="end_datetime">2026-01-14 10:00:00</field>
+        <field name="host_id" ref="mtdn_hr.mtdn_employee_hr_mgr"/>
+        <field name="participant_ids" eval="[(6, 0, [ref('mtdn_hr.mtdn_employee_01'), ref('mtdn_hr.mtdn_employee_02')])]"/>
+        <field name="state">confirmed</field>
+        <field name="equipment_ids" eval="[(6, 0, [ref('mtdn_asset.mtdn_asset_03'), ref('mtdn_asset.mtdn_asset_09')])]"/>
+    </record>
+
+    <record id="mtdn_booking_02" model="mtdn.meeting.booking">
+        <field name="name">Review dự án</field>
+        <field name="room_id" ref="mtdn_room_a"/>
+        <field name="start_datetime">2026-01-14 10:30:00</field>
+        <field name="end_datetime">2026-01-14 11:30:00</field>
+        <field name="host_id" ref="mtdn_hr.mtdn_employee_it_mgr"/>
+        <field name="participant_ids" eval="[(6, 0, [ref('mtdn_hr.mtdn_employee_03'), ref('mtdn_hr.mtdn_employee_08')])]"/>
+        <field name="state">draft</field>
+        <field name="equipment_ids" eval="[(6, 0, [ref('mtdn_asset.mtdn_asset_04')])]"/>
+    </record>
+
+    <record id="mtdn_booking_03" model="mtdn.meeting.booking">
+        <field name="name">Đào tạo nội bộ</field>
+        <field name="room_id" ref="mtdn_room_b"/>
+        <field name="start_datetime">2026-01-14 09:30:00</field>
+        <field name="end_datetime">2026-01-14 11:00:00</field>
+        <field name="host_id" ref="mtdn_hr.mtdn_employee_sale_mgr"/>
+        <field name="participant_ids" eval="[(6, 0, [ref('mtdn_hr.mtdn_employee_04'), ref('mtdn_hr.mtdn_employee_10')])]"/>
+        <field name="state">confirmed</field>
+    </record>
+</odoo>

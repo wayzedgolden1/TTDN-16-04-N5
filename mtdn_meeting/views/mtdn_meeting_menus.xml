@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_mtdn_meeting_root" name="Phòng họp" parent="mtdn_hr.menu_mtdn_root" sequence="30"/>
+
+    <menuitem
+        id="menu_mtdn_meeting_booking"
+        name="Lịch đặt phòng"
+        parent="menu_mtdn_meeting_root"
+        action="action_mtdn_meeting_booking"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_mtdn_meeting_room"
+        name="Phòng họp"
+        parent="menu_mtdn_meeting_root"
+        action="action_mtdn_meeting_room"
+        sequence="20"
+    />
+</odoo>

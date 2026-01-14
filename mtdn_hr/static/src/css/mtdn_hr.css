@@ -1,0 +1,62 @@
+/* MTDN HR - small UI polish (Odoo 19 backend) */
+
+.mtdn_hr_dashboard {
+    padding: 16px 16px 24px 16px;
+}
+
+.mtdn_hr_dashboard_header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 0 12px 0;
+    border-bottom: 1px solid var(--border-color, rgba(0,0,0,.08));
+}
+
+.mtdn_hr_dashboard_title {
+    margin: 0;
+    font-weight: 700;
+}
+
+.mtdn_hr_dashboard_loading {
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    color: var(--text-muted, rgba(0,0,0,.6));
+}
+
+.mtdn_card {
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    transition: transform .08s ease, box-shadow .08s ease;
+}
+
+.mtdn_card_clickable {
+    cursor: pointer;
+}
+
+.mtdn_card_clickable:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px rgba(0,0,0,.10);
+}
+
+.mtdn_card_label {
+    font-size: 13px;
+    letter-spacing: .2px;
+    color: rgba(0,0,0,.55);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.mtdn_card_value {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.mtdn_card_hint {
+    margin-top: 8px;
+    font-size: 13px;
+    color: rgba(0,0,0,.55);
+}

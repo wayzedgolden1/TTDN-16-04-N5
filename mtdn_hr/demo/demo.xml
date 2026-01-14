@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <!-- Departments -->
+    <record id="mtdn_department_hr" model="mtdn.department">
+        <field name="code">HR</field>
+        <field name="name">Phòng Nhân sự</field>
+    </record>
+    <record id="mtdn_department_acc" model="mtdn.department">
+        <field name="code">ACC</field>
+        <field name="name">Phòng Kế toán</field>
+    </record>
+    <record id="mtdn_department_it" model="mtdn.department">
+        <field name="code">IT</field>
+        <field name="name">Phòng Công nghệ (IT)</field>
+    </record>
+    <record id="mtdn_department_sale" model="mtdn.department">
+        <field name="code">SALE</field>
+        <field name="name">Phòng Kinh doanh</field>
+    </record>
+
+    <!-- Jobs -->
+    <record id="mtdn_job_hr_off" model="mtdn.job">
+        <field name="code">HR_OFF</field>
+        <field name="name">Chuyên viên nhân sự</field>
+    </record>
+    <record id="mtdn_job_acc_gen" model="mtdn.job">
+        <field name="code">ACC_GEN</field>
+        <field name="name">Kế toán tổng hợp</field>
+    </record>
+    <record id="mtdn_job_dev" model="mtdn.job">
+        <field name="code">DEV</field>
+        <field name="name">Lập trình viên</field>
+    </record>
+    <record id="mtdn_job_sale_rep" model="mtdn.job">
+        <field name="code">SALE_REP</field>
+        <field name="name">Nhân viên kinh doanh</field>
+    </record>
+    <record id="mtdn_job_manager" model="mtdn.job">
+        <field name="code">MANAGER</field>
+        <field name="name">Trưởng phòng</field>
+    </record>
+
+    <!-- Employees (managers first for references) -->
+    <record id="mtdn_employee_hr_mgr" model="mtdn.employee">
+        <field name="code">EMP00005</field>
+        <field name="name">Vũ Thị F</field>
+        <field name="gender">female</field>
+        <field name="department_id" ref="mtdn_department_hr"/>
+        <field name="job_id" ref="mtdn_job_manager"/>
+        <field name="start_date">2020-11-11</field>
+        <field name="state">working</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="email">f.hr@example.com</field>
+    </record>
+
+    <record id="mtdn_employee_it_mgr" model="mtdn.employee">
+        <field name="code">EMP00006</field>
+        <field name="name">Hoàng Văn E</field>
+        <field name="gender">male</field>
+        <field name="department_id" ref="mtdn_department_it"/>
+        <field name="job_id" ref="mtdn_job_manager"/>
+        <field name="start_date">2021-03-20</field>
+        <field name="state">working</field>
+        <field name="email">e.it@example.com</field>
+    </record>
+
+    <record id="mtdn_employee_sale_mgr" model="mtdn.employee">
+        <field name="code">EMP00007</field>
+        <field name="name">Đặng Văn G</field>
+        <field name="gender">male</field>
+        <field name="department_id" ref="mtdn_department_sale"/>
+        <field name="job_id" ref="mtdn_job_manager"/>
+        <field name="start_date">2019-07-05</field>
+        <field name="state">working</field>
+        <field name="email">g.sale@example.com</field>
+    </record>
+
+    <!-- Other employees -->
+    <record id="mtdn_employee_01" model="mtdn.employee">
+        <field name="code">EMP00001</field>
+        <field name="name">Nguyễn Văn A</field>
+        <field name="gender">male</field>
+        <field name="department_id" ref="mtdn_department_hr"/>
+        <field name="job_id" ref="mtdn_job_hr_off"/>
+        <field name="manager_id" ref="mtdn_employee_hr_mgr"/>
+        <field name="start_date">2024-01-10</field>
+        <field name="state">working</field>
+        <field name="email">a@example.com</field>
+    </record>
+
+    <record id="mtdn_employee_02" model="mtdn.employee">
+        <field name="code">EMP00002</field>
+        <field name="name">Trần Thị B</field>
+        <field name="gender">female</field>
+        <field name="department_id" ref="mtdn_department_acc"/>
+        <field name="job_id" ref="mtdn_job_acc_gen"/>
+        <field name="start_date">2023-05-01</field>
+        <field name="state">working</field>
+        <field name="email">b@example.com</field>
+    </record>
+
+    <record id="mtdn_employee_03" model="mtdn.employee">
+        <field name="code">EMP00003</field>
+        <field name="name">Lê Văn C</field>
+        <field name="gender">male</field>
+        <field name="department_id" ref="mtdn_department_it"/>
+        <field name="job_id" ref="mtdn_job_dev"/>
+        <field name="manager_id" ref="mtdn_employee_it_mgr"/>
+        <field name="start_date">2025-12-01</field>
+        <field name="state">probation</field>
+        <field name="email">c@example.com</field>
+    </record>
+
+    <record id="mtdn_employee_04" model="mtdn.employee">
+        <field name="code">EMP00004</field>
+        <field name="name">Phạm Thị D</field>
+        <field name="gender">female</field>
+        <field name="department_id" ref="mtdn_department_sale"/>
+        <field name="job_id" ref="mtdn_job_sale_rep"/>
+        <field name="manager_id" ref="mtdn_employee_sale_mgr"/>
+        <field name="start_date">2022-09-15</field>
+        <field name="state">working</field>
+        <field name="email">d@example.com</field>
+    </record>
+
+    <record id="mtdn_employee_08" model="mtdn.employee">
+        <field name="code">EMP00008</field>
+        <field name="name">Ngô Thị H</field>
+        <field name="gender">female</field>
+        <field name="department_id" ref="mtdn_department_it"/>
+        <field name="job_id" ref="mtdn_job_dev"/>
+        <field name="manager_id" ref="mtdn_employee_it_mgr"/>
+        <field name="start_date">2023-10-01</field>
+        <field name="state">on_leave</field>
+        <field name="email">h@example.com</field>
+    </record>
+
+    <record id="mtdn_employee_09" model="mtdn.employee">
+        <field name="code">EMP00009</field>
+        <field name="name">Bùi Văn I</field>
+        <field name="gender">male</field>
+        <field name="department_id" ref="mtdn_department_hr"/>
+        <field name="job_id" ref="mtdn_job_hr_off"/>
+        <field name="manager_id" ref="mtdn_employee_hr_mgr"/>
+        <field name="start_date">2018-06-01</field>
+        <field name="leave_date">2024-06-30</field>
+        <field name="state">resigned</field>
+        <field name="active" eval="False"/>
+        <field name="email">i@example.com</field>
+    </record>
+
+    <record id="mtdn_employee_10" model="mtdn.employee">
+        <field name="code">EMP00010</field>
+        <field name="name">Đỗ Thị K</field>
+        <field name="gender">female</field>
+        <field name="department_id" ref="mtdn_department_acc"/>
+        <field name="job_id" ref="mtdn_job_acc_gen"/>
+        <field name="start_date">2024-08-10</field>
+        <field name="state">working</field>
+        <field name="email">k@example.com</field>
+    </record>
+
+    <!-- Update department managers after employees exist -->
+    <record id="mtdn_department_hr" model="mtdn.department">
+        <field name="manager_id" ref="mtdn_employee_hr_mgr"/>
+    </record>
+    <record id="mtdn_department_it" model="mtdn.department">
+        <field name="manager_id" ref="mtdn_employee_it_mgr"/>
+    </record>
+    <record id="mtdn_department_sale" model="mtdn.department">
+        <field name="manager_id" ref="mtdn_employee_sale_mgr"/>
+    </record>
+</odoo>

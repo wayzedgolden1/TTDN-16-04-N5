@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_mtdn_asset_list" model="ir.ui.view">
+        <field name="name">mtdn.asset.list</field>
+        <field name="model">mtdn.asset</field>
+        <field name="arch" type="xml">
+            <list string="Tài sản">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="category_id"/>
+                <field name="state" widget="badge"/>
+                <field name="employee_id"/>
+                <field name="department_id"/>
+                <field name="value"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_mtdn_asset_form" model="ir.ui.view">
+        <field name="name">mtdn.asset.form</field>
+        <field name="model">mtdn.asset</field>
+        <field name="arch" type="xml">
+            <form string="Tài sản">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="VD: Laptop Dell"/></h1>
+                        <div class="text-muted">
+                            <span>Mã: </span>
+                            <field name="code" readonly="1" class="oe_inline"/>
+                        </div>
+                    </div>
+
+                    <group>
+                        <group string="Thông tin tài sản">
+                            <field name="category_id"/>
+                            <field name="state"/>
+                            <field name="company_id"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="Giá trị">
+                            <field name="purchase_date"/>
+                            <field name="in_service_date"/>
+                            <field name="value"/>
+                            <field name="currency_id" groups="base.group_system"/>
+                        </group>
+                    </group>
+
+                    <group string="Gán tài sản">
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="department_id"/>
+                        </group>
+                        <group>
+                            <field name="note" nolabel="1" placeholder="Ghi chú..."/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mtdn_asset_search" model="ir.ui.view">
+        <field name="name">mtdn.asset.search</field>
+        <field name="model">mtdn.asset</field>
+        <field name="arch" type="xml">
+            <search string="Tìm tài sản">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="category_id"/>
+                <field name="employee_id"/>
+                <field name="department_id"/>
+
+                <filter name="filter_available" string="Sẵn sàng" domain="[('state','=','available')]"/>
+                <filter name="filter_in_use" string="Đang sử dụng" domain="[('state','=','in_use')]"/>
+                <filter name="filter_maintenance" string="Bảo trì" domain="[('state','=','maintenance')]"/>
+                <filter name="filter_broken" string="Hỏng" domain="[('state','=','broken')]"/>
+                <filter name="filter_active" string="Đang hoạt động" domain="[('active','=',True)]"/>
+
+                <filter name="group_by_category" string="Nhóm theo loại" context="{'group_by':'category_id'}"/>
+                <filter name="group_by_state" string="Nhóm theo trạng thái" context="{'group_by':'state'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

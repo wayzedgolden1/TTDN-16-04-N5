@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_mtdn_asset_category_list" model="ir.ui.view">
+        <field name="name">mtdn.asset.category.list</field>
+        <field name="model">mtdn.asset.category</field>
+        <field name="arch" type="xml">
+            <list string="Loại tài sản">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_mtdn_asset_category_form" model="ir.ui.view">
+        <field name="name">mtdn.asset.category.form</field>
+        <field name="model">mtdn.asset.category</field>
+        <field name="arch" type="xml">
+            <form string="Loại tài sản">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="VD: Thiết bị IT"/></h1>
+                        <div class="text-muted">
+                            <span>Mã: </span>
+                            <field name="code" placeholder="VD: IT_EQUIP" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <group>
+                        <group string="Thông tin">
+                            <field name="active"/>
+                        </group>
+                        <group string="Mô tả">
+                            <field name="description" nolabel="1" placeholder="Mô tả ngắn..."/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mtdn_asset_category_search" model="ir.ui.view">
+        <field name="name">mtdn.asset.category.search</field>
+        <field name="model">mtdn.asset.category</field>
+        <field name="arch" type="xml">
+            <search string="Tìm loại tài sản">
+                <field name="name"/>
+                <field name="code"/>
+                <filter name="filter_active" string="Đang hoạt động" domain="[('active','=',True)]"/>
+            </search>
+        </field>
+    </record>
+</odoo>
