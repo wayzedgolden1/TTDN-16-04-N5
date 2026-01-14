@@ -64,10 +64,10 @@ xmlrpc_port = 8069
 <p>Ngoài ra có thể thêm mổ số parameters như:</p>
 
 <pre>
-<p>-c &lt;đường dẫn đến tệp odoo.conf&gt;</p>
-<p>-u &lt;tên addons&gt; giúp cập nhật addons đó trước khi khởi chạy</p>
-<p>-d &lt;tên database&gt; giúp chỉ rõ tên database được sử dụng</p>
-<p>--dev=all giúp bật chế độ nhà phát triển</p>
+-c &lt;đường dẫn đến tệp odoo.conf&gt;
+-u &lt;tên addons&gt; giúp cập nhật addons đó trước khi khởi chạy
+-d &lt;tên database&gt; giúp chỉ rõ tên database được sử dụng
+--dev=all giúp bật chế độ nhà phát triển
 </pre>
 
 ## 4. Chạy hệ thống và cài đặt các ứng dụng cần thiết
