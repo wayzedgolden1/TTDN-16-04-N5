@@ -15,6 +15,8 @@
 [![DaiNam University](https://img.shields.io/badge/DaiNam%20University-orange?style=for-the-badge)](https://dainam.edu.vn)
 </div>
 
+## Công nghệ sử dụng
+
 ![Ubuntu](https://img.shields.io/badge/UBUNTU-orange?logo=ubuntu&logoColor=white)
 ![GitLab](https://img.shields.io/badge/GITLAB-black?logo=gitlab&logoColor=white)
 ![Postgres](https://img.shields.io/badge/POSTGRES-blue?logo=postgresql&logoColor=white)
