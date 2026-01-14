@@ -6,7 +6,7 @@
 ![Bandit](https://img.shields.io/badge/security-bandit-yellow)
 
 
-<p><b>1. Cài đặt công cụ, môi trường và các thư viện cần thiết</b></p>
+<p style="font-size:20px; font-weight:bold;"><b>1. Cài đặt công cụ, môi trường và các thư viện cần thiết</b></p>
 
 <p><b>1.1. Clone project.</b></p>
 <pre>
