@@ -15,14 +15,14 @@ git clone https://gitlab.com/anhlta/odoo-fitdnu.git
 git checkout &lt;branch-name&gt;
 </pre>
 
-<p><b>1.2. cài đặt các thư viện cần thiết</b></p>
+### 1.2. cài đặt các thư viện cần thiết
 <p>Người sử dụng thực thi các lệnh sau đề cài đặt các thư viện cần thiết</p>
 
 <pre>
 sudo apt-get install libxml2-dev libxslt-dev libldap2-dev libsasl2-dev libssl-dev python3.10-distutils python3.10-dev build-essential libssl-dev libffi-dev zlib1g-dev python3.10-venv libpq-dev
 </pre>
 
-<p><b>1.3. khởi tạo môi trường ảo.</b></p>
+### 1.3. khởi tạo môi trường ảo.
 
 <pre>
 python3.10 -m venv ./venv
@@ -35,7 +35,7 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 </pre>
 
-<p><b>2. Setup database</b></p>
+## 2. Setup database
 
 <p>Khởi tạo database trên docker bằng việc thực thi file dockercompose.yml.</p>
 
@@ -43,9 +43,9 @@ pip3 install -r requirements.txt
 docker-compose up -d
 </pre>
 
-<p><b>3. Setup tham số chạy cho hệ thống</b></p>
+## 3. Setup tham số chạy cho hệ thống
 
-<p><b>3.1. Khởi tạo odoo.conf</b></p>
+### 3.1. Khởi tạo odoo.conf
 
 <p>Tạo tệp odoo.conf có nội dung như sau:</p>
 
@@ -68,7 +68,7 @@ xmlrpc_port = 8069
 <p>-d &lt;tên database&gt; giúp chỉ rõ tên database được sử dụng</p>
 <p>--dev=all giúp bật chế độ nhà phát triển</p>
 
-<p><b>4. Chạy hệ thống và cài đặt các ứng dụng cần thiết</b></p>
+## 4. Chạy hệ thống và cài đặt các ứng dụng cần thiết
 
 <p>Người sử dụng truy cập theo đường dẫn http://localhost:8069/ để đăng nhập vào hệ thống.</p>
 
